@@ -66,40 +66,25 @@ This application functions as a rule engine that assesses user eligibility based
      ```json
      {
        "ruleString": "((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)",
-       "ruleName": "Rule 1"
+       "ruleName": "Rule-1"
      }
      ```
    - **Note:** Ensure that there are appropriate spaces in the rule for accurate results. The rule should follow this format: 
    `variable operator value`
-
    - **Response:**
-     ```json
-     {
-       "_id": "605c72ef1f4e3a001f4d2e9a",
-       "rule_name": "Rule1",
-       "rule_ast": { ... }
-     }
-     ```
+    <img src="https://github.com/user-attachments/assets/4f66d741-c025-45cd-b602-acc027f0a9c6" alt="Response Image" width="300" />
 
+   
+     
+     
 2. **Combine Rules**
    - **Endpoint:** `/api/rules/combine_rules`
    - **Method:** POST
    - **Request Body:**
-     ```json
-     {
-       "ruleIds": ["605c72ef1f4e3a001f4d2e9a", "605c730f1f4e3a001f4d2e9b"],
-       "operators": "op"
-     }
-     ```
    - **Response:**
-     ```json
-     {
-       "type": "operator",
-       "value": "operator",
-       "left": { ... },
-       "right": { ... }
-     }
-     ```
+   <img src="https://github.com/user-attachments/assets/908bbdc4-0d21-4a33-ac39-5a8041100b99" alt="Response Image" width="300" />
+
+
 
 3. **Evaluate a Rule**
    - **Endpoint:** `/api/rules/evaluate_rule`
