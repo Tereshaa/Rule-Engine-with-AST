@@ -1,70 +1,58 @@
-# Rule Engine Application
-Hosted link: https://app1-rule-engine-with-ast.onrender.com/
+
+# Application 1: Rule Engine using AST by Y Teresha
+![image](https://github.com/user-attachments/assets/dfb4461a-21f7-4560-b5f1-bc23d946ace4)
+
+Preview: 
 
 ## Overview
 
-This application is a rule engine that determines user eligibility based on attributes such as age, department, salary, and experience. It uses an Abstract Syntax Tree (AST) to represent and manage conditional rules, allowing for dynamic rule creation, combination, and evaluation.
-
-<img width="943" alt="image" src="https://github.com/user-attachments/assets/78f6bdca-68aa-4818-a56f-5a50c2023b7f">
-
+This application functions as a rule engine that assesses user eligibility based on various attributes, including age, department, salary, and experience. It employs an Abstract Syntax Tree (AST) for representing and managing conditional rules, facilitating the dynamic creation, combination, and evaluation of rules.
 
 ## Features
 
-- **Create Rules:** Define rules using a string format that gets converted into an AST.
-  
-  <img width="377" alt="image" src="https://github.com/user-attachments/assets/0ffe41aa-7f9c-4fe1-9230-2091bbb16632">
+- **Rule Creation:** Users can define rules using a string format, which is then transformed into an AST.
+
+  ![image](https://github.com/user-attachments/assets/b24780d5-5041-4707-9b31-2cbf573fcf03)
 
 
-- **Combine Rules:** Combine multiple rules into a single AST for more complex evaluations.
-  
-  <img width="376" alt="image" src="https://github.com/user-attachments/assets/63145818-6936-4763-8fbe-db65f264e4ff">
+- **Rule Combination:** Allows the merging of multiple rules into a singular AST to enable more intricate evaluations.
 
-  
-- **Evaluate Rules:** Check if the given data meets the criteria defined by the AST.
-  
-  <img width="375" alt="image" src="https://github.com/user-attachments/assets/041e664f-1711-4bbb-b107-50d5fb7909f4">
+![image](https://github.com/user-attachments/assets/f80b0a7b-0201-4d0f-9c7c-eb4acd42ad06)
 
 
-- **Tree Visualization:** Define or Combine Rule would should show Tree Representation.
+- **Rule Evaluation:** Assesses whether the provided data aligns with the criteria set by the AST.
+
+![image](https://github.com/user-attachments/assets/d154eb35-eb66-459e-9452-2dcc286eb121)
+
+
+- **Tree Visualization:** When defining or combining rules, a tree representation will be displayed for better understanding.
 
 ## Tech Stack
 
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
+- **Backend:** Built with Node.js and Express.js
+- **Database:** Utilizes MongoDB
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js and npm installed
-- MongoDB installed and running
+- Ensure Node.js and npm are installed.
 
-### Installation
+### Installation Steps
 
 1. **Clone the Repository**
    ```bash
-   git clone "https://github.com/Santosh-2003-sahoo/App1-Rule-Engine-with-AST.git"
-   cd rule-engine
+   git clone "https://github.com/Tereshaa/Application-1-Rule-Engine-with-AST.git"
    ```
 
-2. **Install Backend Dependencies**
-
+2. **Install the Backend Dependencies**
    ```bash
    npm install
    ```
-   
-3. **Start MongoDB**
 
-   Ensure that MongoDB is running on your local machine:
-
+3. **Launch the Server**
    ```bash
-   mongod
-   ```
-
-4. **Start the Backend Server**
-
-   ```bash
-   nodemon server.js
+   npm start
    ```
 
 ## API Endpoints
@@ -72,21 +60,17 @@ This application is a rule engine that determines user eligibility based on attr
 1. **Create a Rule**
    - **Endpoint:** `/api/create_rule`
    - **Method:** POST
-   - **Body:**
-
+   - **Request Body:**
      ```json
      {
        "ruleString": "((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)",
        "ruleName": "Rule 1"
      }
      ```
-use appropriate spaces in Rules for correct results.
-
-Rule should be in follow format:
-variable operator value 
+   - **Note:** Ensure that there are appropriate spaces in the rule for accurate results. The rule should follow this format: 
+   `variable operator value`
 
    - **Response:**
-
      ```json
      {
        "_id": "605c72ef1f4e3a001f4d2e9a",
@@ -98,20 +82,18 @@ variable operator value
 2. **Combine Rules**
    - **Endpoint:** `/api/rules/combine_rules`
    - **Method:** POST
-   - **Body:**
-
+   - **Request Body:**
      ```json
      {
-       "ruleIds": ["605c72ef1f4e3a001f4d2e9a", "605c730f1f4e3a001f4d2e9b"]
-       "operators: op
+       "ruleIds": ["605c72ef1f4e3a001f4d2e9a", "605c730f1f4e3a001f4d2e9b"],
+       "operators": "op"
      }
      ```
    - **Response:**
-
      ```json
      {
        "type": "operator",
-       "value": operator,
+       "value": "operator",
        "left": { ... },
        "right": { ... }
      }
@@ -120,8 +102,7 @@ variable operator value
 3. **Evaluate a Rule**
    - **Endpoint:** `/api/rules/evaluate_rule`
    - **Method:** POST
-   - **Body:**
-
+   - **Request Body:**
      ```json
      {
        "rule": { ... },
@@ -134,7 +115,6 @@ variable operator value
      }
      ```
    - **Response:**
-
      ```json
      {
        "result": true
@@ -143,6 +123,4 @@ variable operator value
 
 ## Running Tests
 
-You can add and run tests to ensure everything is working correctly. 
-```
-created bt: santosh sahoo
+You can implement and execute tests to verify that everything is functioning as expected.
