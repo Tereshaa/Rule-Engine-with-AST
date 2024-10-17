@@ -44,13 +44,15 @@ This application functions as a rule engine that assesses user eligibility based
    ```bash
    git clone "https://github.com/Tereshaa/Application-1-Rule-Engine-with-AST.git"
    ```
-
 2. **Install the Backend Dependencies**
    ```bash
    npm install
    ```
-
-3. **Launch the Server**
+2. **Create a .env file and add ur Mongo_url**
+   ```bash
+   MONGO_URL=""
+   ```
+4. **Launch the Server**
    ```bash
    npm start
    ```
