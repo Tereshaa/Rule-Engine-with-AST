@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 mongoose.connect(process.env.MONGO_URL, { // Use the MONGO_URI from .env
-  useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
   console.log("Connected to MongoDB");
@@ -27,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Route for serving the index.html
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './views/index.html'));
+  res.sendFile(path.join(__dirname, './frontend/index.html'));
 });
 
 app.use('/api/rules', ruleRoutes);
